@@ -1,0 +1,8 @@
+#invoice-list-pane,
+#invoice-pane {
+  width: 46%;
+  float: left;
+  background: #eee;
+  margin: 0 1%;
+  padding: 10px 1%;
+}

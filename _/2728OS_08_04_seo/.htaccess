@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+  RewriteRule (.*) http://localhost:3000/backbone/2728_08_04_seo/index.html#%1? [P]
+</IfModule>
+

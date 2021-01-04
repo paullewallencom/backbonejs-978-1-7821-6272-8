@@ -1,0 +1,21 @@
+
+  var InvoiceItemView = Backbone.View.extend({
+
+    // ...
+
+    initialize: function() {
+      // Bind callback to destroy event of the model.
+      this.listenTo(this.model, 'destroy', this.destroy, this);
+    }
+  });
+
+  var InvoiceItemTableView = Backbone.View.extend({
+
+    // ...
+
+    initialize: function() {
+
+      // Bind callback to add event of the collection.
+      this.listenTo(this.collection, 'add', this.append, this);
+    }
+  });

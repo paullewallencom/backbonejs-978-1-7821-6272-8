@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Cookbook - Application</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+  <script src="lib/jquery.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="lib/backbone.layoutmanager.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <!-- Layout template. -->
+  <script class="template" type="template" id="layout">
+    <h1>Billing application</h1>
+    <div id="invoice-list-pane"></div>
+    <div id="invoice-pane"></div>
+  </script>
+
+  <!-- Invoice list template. -->
+  <script class="template" type="template" id="invoice-list-pane">
+    <h3>Invoices:</h3>
+    <ul>
+      <% invoices.each(function(invoice) { %>
+        <li>
+          <a href="#invoice/<%= invoice.cid %>"><%= invoice.get('referenceNumber') %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </script>
+
+  <!-- Invoice pane template. -->
+  <script class="template" type="template" id="invoice-pane">
+    <h3>Invoice details:</h3>
+    Reference Number: <%= invoice.get('referenceNumber') %><br>
+    Date: <%= invoice.get('date') %><br>
+    Status: <%= invoice.get('status') %><br>
+  </script>
+</head>
+
+<body></body>
+
+</html>

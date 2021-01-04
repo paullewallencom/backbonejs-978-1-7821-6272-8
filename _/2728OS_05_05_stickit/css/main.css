@@ -1,0 +1,21 @@
+.invoice-item-view {
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+.invoice-item-form-view {
+  background: #ddd;
+  border: #999 1px solid;
+  padding: 10px;
+  width: 320px;
+}
+
+.invoice-item-form-view label {
+  width: 100px;
+  display: inline-block;
+}
+
+.invoice-item-form-view input {
+  width: 200px;
+}

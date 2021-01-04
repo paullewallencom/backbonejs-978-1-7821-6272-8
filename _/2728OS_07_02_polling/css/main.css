@@ -1,0 +1,14 @@
+#first-pane,
+#second-pane {
+  width: 46%;
+  float: left;
+  background: #eee;
+  margin: 0 1%;
+  padding: 10px 1%;
+}
+
+h1,
+#links-pane {
+  margin: 0 1%;
+  padding: 10px 1%;
+}

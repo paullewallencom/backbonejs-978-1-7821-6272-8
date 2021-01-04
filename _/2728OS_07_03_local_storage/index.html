@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Cookbook - Application</title>
+
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+  <script src="lib/jquery.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+
+  <script src="lib/backbone.layoutmanager.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="lib/backbone.localStorage.js"></script>
+
+
+  <script src="js/main.js"></script>
+
+  <!-- Layout template. -->
+  <script class="template" type="template" id="layout">
+    <h1>Billing application</h1>
+    <div id="links-pane"><a href="#invoice/add">+ Add an invoice</a></div>
+    <div id="first-pane"></div>
+    <div id="second-pane"></div>
+  </script>
+
+  <!-- Invoice list template. -->
+  <script class="template" type="template" id="invoice-list-pane">
+    <h3>Invoices:</h3>
+    <ul>
+      <% invoices.each(function(invoice) { %>
+        <li>
+          <a href="#invoice/<%= invoice.id %>"><%= invoice.get('referenceNumber') %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </script>
+
+  <!-- Invoice pane template. -->
+  <script class="template" type="template" id="invoice-pane">
+    <h3>Invoice details:</h3>
+    Reference Number: <%= invoice.get('referenceNumber') %><br>
+    Date: <%= invoice.get('date') %><br>
+    Status: <%= invoice.get('status') %><br>
+    <br>
+    <a href="#invoice/<%= invoice.id %>/edit" class="btn">Edit</a>
+    <a href="#invoice/<%= invoice.id %>/delete" class="btn">Delete</a>
+  </script>
+
+  <!-- Edit invoice pane template. -->
+  <script class="template" type="template" id="edit-invoice-pane">
+    <h3>Enter invoice details:</h3>
+    Reference Number:<br>
+    <input class="referenceNumber" type="text" value="<%= invoice.get('referenceNumber') %>"><br>
+    Date:<br>
+    <input class="date" type="text" value="<%= invoice.get('date') %>"><br>
+    Status:<br>
+    <input class="status" type="text" value="<%= invoice.get('status') %>"><br>
+    <button class="btn btn-primary submit">Save</button>
+  </script>
+
+  <!-- Delete invoice pane template. -->
+  <script class="template" type="template" id="delete-invoice-pane">
+    <h3>Are you sure you want to delete invoice <%= invoice.get('referenceNumber') %>?</h3>
+    <button class="btn submit btn-primary">Yes</button>
+    <a href="#invoice/<%= invoice.id %>" class="btn">No</a>
+  </script>
+</head>
+
+<body></body>
+
+</html>
